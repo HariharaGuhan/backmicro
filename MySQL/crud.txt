@@ -1,0 +1,60 @@
+const express = require('express');
+const bodyParser = require('body-parser');
+const mysql = require('mysql');
+
+const app = express();
+const port = 5000;
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// MySQL connection
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'your_mysql_user',
+  password: 'your_mysql_password',
+  database: 'your_database_name',
+});
+
+connection.connect((err) => {
+  if (err) throw err;
+  console.log('Connected to the MySQL server');
+});
+
+// API endpoints
+app.get('/api/items', (req, res) => {
+  connection.query('SELECT * FROM items', (error, results) => {
+    if (error) throw error;
+    res.send(results);
+  });
+});
+
+app.post('/api/items', (req, res) => {
+  const { name, description } = req.body;
+  connection.query('INSERT INTO items (name, description) VALUES (?, ?)', [name, description], (error, results) => {
+    if (error) throw error;
+    res.send(results);
+  });
+});
+
+app.put('/api/items/:id', (req, res) => {
+  const { id } = req.params;
+  const { name, description } = req.body;
+  connection.query('UPDATE items SET name = ?, description = ? WHERE id = ?', [name, description, id], (error, results) => {
+    if (error) throw error;
+    res.send(results);
+  });
+});
+
+app.delete('/api/items/:id', (req, res) => {
+  const { id } = req.params;
+  connection.query('DELETE FROM items WHERE id = ?', [id], (error, results) => {
+    if (error) throw error;
+    res.send(results);
+  });
+});
+
+// Start the server
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});

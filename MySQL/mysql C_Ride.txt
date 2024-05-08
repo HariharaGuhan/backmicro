@@ -1,0 +1,128 @@
+use adhocvhs_nodedb;
+CREATE TABLE mas_user(
+   user_id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    user_Name VARCHAR(255) null,
+    pass_word VARCHAR(255) null,
+    first_Name VARCHAR(255)not null,
+    last_Name VARCHAR(255)not null,
+    MobileNo VARCHAR(15) not null ,
+    OTP INT,
+    OTP_Exp DATETIME,
+    is_AcceptTerms boolean not null,
+    profile_Image BLOB,
+    Wallet_Amount DECIMAL(10, 2) DEFAULT 0.00,
+    gender ENUM('Male', 'Female', 'Other')not null,
+    Emergency_No VARCHAR(15),
+    Referal_Code VARCHAR(10),
+    OTP_verified boolean default false
+); 
+select * from mas_user;
+drop table mas_user;
+
+SELECT
+        u.*,
+        e.*
+      FROM mas_user AS u
+      LEFT JOIN mas_user_emg_Contact AS e ON u.user_id = e.user_id;
+
+
+
+select * from mas_AddressType;
+CREATE TABLE mas_AddressType (
+    addresstype_id INT AUTO_INCREMENT PRIMARY KEY,
+    addresstype VARCHAR(255)
+);
+desc mas_user_emg_Contact;
+select * from mas_user_emg_Contact;
+
+desc mas_AddressType;
+delete from mas_user where user_id =4;
+
+
+
+
+SELECT * FROM adhocvhs_nodedb.mas_UserAddress;
+desc mas_user;
+delete from mas_UserAddress where user_Addressid=0;
+drop table mas_UserAddress;
+CREATE TABLE mas_UserAddress (
+    user_Addressid INT NOT NULL PRIMARY KEY auto_increment,
+    addresstype_id INT ,
+    user_id BIGINT,
+    address VARCHAR(255) NULL,
+    city_Name VARCHAR(100) NULL,
+    state_Name VARCHAR(100) NULL,
+    pincode VARCHAR(10) NULL,
+    latitude DECIMAL(10, 6),
+    longitude DECIMAL(10, 6),
+    is_Default BOOLEAN DEFAULT 0,
+    FOREIGN KEY (addresstype_id) REFERENCES adhocvhs_nodedb.mas_AddressType(addresstype_id),
+    FOREIGN KEY (user_id) REFERENCES adhocvhs_nodedb.mas_user(user_id)
+);
+alter table mas_user modify profile_Image varchar(300);
+
+
+
+SELECT * FROM adhocvhs_nodedb.mas_UserAddress;
+
+use adhocvhs_nodedb;
+drop table trans_booking;
+select * from trans_booking;
+CREATE TABLE trans_booking (
+    booking_Id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    booking_date DATE,
+    user_id BIGINT,
+    fav_id int,
+    from_latitude DECIMAL(10, 6),
+    from_longitude DECIMAL(10, 6),
+    from_Place VARCHAR(255),
+    to_latitude DECIMAL(10, 6),
+    to_longitude DECIMAL(10, 6),
+    to_Place VARCHAR(255),
+    km_distance DECIMAL(10, 2),
+    is_confirm TINYINT(1),
+    driver_id INT,
+    Amount VARCHAR(20),
+    Coupon_amount VARCHAR(20),
+    total_amount VARCHAR(20),
+    Payment_status VARCHAR(255),
+     FOREIGN KEY (user_id) REFERENCES adhocvhs_nodedb.mas_user(user_id),
+     FOREIGN KEY (fav_id) REFERENCES adhocvhs_nodedb.mas_fav_place(fav_id)
+);
+CREATE TABLE mas_fav_place (
+    fav_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id bigint,
+    place_Name VARCHAR(255),
+    latitude DECIMAL(10, 6),
+    longitude DECIMAL(10, 6),
+    FOREIGN KEY (user_id) REFERENCES adhocvhs_nodedb.trans_booking(user_id),
+    FOREIGN KEY (booking_Id) REFERENCES adhocvhs_nodedb.trans_booking(booking_Id)
+);
+select * from mas_fav_place;
+drop table mas_fav_place;
+ALTER TABLE mas_fav_place
+ADD CONSTRAINT 
+FOREIGN KEY (booking_Id) 
+REFERENCES adhocvhs_nodedb.trans_booking(booking_Id);
+
+ALTER TABLE mas_fav_place
+ADD CONSTRAINT 
+FOREIGN KEY (booking_Id)
+REFERENCES trans_booking(booking_Id);
+
+desc mas_fav_place;
+
+
+CREATE TABLE mas_vehicle (
+    vehicle_Id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    booking_Id BIGINT,
+    vehicle_Name VARCHAR(255),
+    vehicle_Number VARCHAR(255),
+    vehicle_Type VARCHAR(255),
+   FOREIGN KEY (booking_Id) REFERENCES adhocvhs_nodedb.trans_booking(booking_Id)
+);
+
+desc mas_vehicle;
+
+
+

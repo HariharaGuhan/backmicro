@@ -1,0 +1,87 @@
+1.print the reverse.
+function reverseString(str) {
+  let reversed = '';
+  for (let i = str.length - 1; i >= 0; i--) {
+    reversed += str.charAt(i);
+  }
+  console.log(reversed);
+}
+
+// Example usage
+const inputString = 'codecode';
+
+reverseString(inputString);
+
+o/p:edocedoc
+
+2.is prime number or not
+function isPrime(number) {
+  if (number < 2) {
+    return false;
+  }
+
+  for (let i = 2; i <= Math.sqrt(number); i++) {
+    if (number % i === 0) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+// Example usage
+const num1 = 3;
+console.log(isPrime(num1) ? 'Yes' : 'No'); // Output: Yes
+
+const num2 = 4;
+console.log(isPrime(num2) ? 'Yes' : 'No'); // Output: No
+
+o/p: yes
+     no
+
+3.Array of number
+function largestNumber(arr) {
+  // Convert all numbers to strings for comparison
+  const stringArr = arr.map(String);
+
+  // Custom sorting algorithm
+  stringArr.sort((a, b) => {
+    const option1 = a + b;
+    const option2 = b + a;
+    return option2.localeCompare(option1); // Compare options in reverse order
+  });
+
+  // Concatenate the sorted strings to form the largest number
+  const largestNum = stringArr.join('');
+
+  return largestNum;
+}
+
+// Example usage
+const numbers = [54, 546, 548, 60];
+const largest = largestNumber(numbers);
+console.log(largest); // Output: 6054854654
+
+4.Reverse num of N
+function reverseNumber(num) {
+  const reversedString = String(num).split('').reverse().join('');
+  const reversedNum = parseInt(reversedString, 10);
+  return reversedNum;
+}
+
+// Example usage
+const number = 988;
+const reversed = reverseNumber(number);
+console.log(reversed); // Output: 889
+
+5.max and min value
+function findMinMax(arr) {
+  const max = Math.max(...arr);
+  const min = Math.min(...arr);
+  return `${max} ${min}`;
+}
+
+// Example usage
+const numbers = [54, 546, 548, 60];
+const result = findMinMax(numbers);
+console.log(result); // Output: 548 54

@@ -1,0 +1,33 @@
+<ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+                            <li className="nav-item active">
+                                <Link to="/Profile" className="nav-link text-light  ml-5"><h6>Home</h6></Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to="/Aboutme" className="nav-link text-light ml-5"><h6>About</h6></Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to="/Skills" className="nav-link text-light ml-5"><h6>Skills</h6></Link>
+
+                            </li>
+
+                            <li className="nav-item">
+                                <Link to="/Educationq" className="nav-link text-light ml-5"><h6>Education</h6></Link>
+
+                            </li>
+
+                            <li className="nav-item">
+                                <Link to="/Certii" className="nav-link text-light ml-5"><h6>Certificates</h6></Link>
+
+                            </li>
+
+                            <li className="nav-item">
+                                <Link to="/Wrkexp" className="nav-link text-light ml-5"><h6>Experience</h6></Link>
+
+                            </li>
+
+                            <li className="nav-item">
+                                <Link to="/Allinone" className="nav-link text-light ml-5"><h6>Overall</h6></Link>
+
+                            </li>
+
+                        </ul>

@@ -1,0 +1,8 @@
+null in sql 
+const handlesubmit = (event) => {
+
+        event.preventDefault();
+        var datastring = new FormData(event.target);
+        var config = {headers:{"enctype":"multipart/form-data"}};
+
+        axios.post('http://localhost:3000/Education',datastring,config)

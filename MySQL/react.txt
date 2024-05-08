@@ -1,0 +1,82 @@
+
+@babel is used to write html code in javascript
+
+creating new project in react js:
+1.create-react-app project-name
+2.cd proj name
+3.npm start
+
+
+white color is predefined
+orange is modified files
+green is 
+
+./,../../ is named as extension
+
+
+react examples default
+
+import React from "react";
+import './home.css'
+import isha from '../../images/img.jpg';
+function Home()
+{
+return(
+<>
+<div className="backgro">
+
+<h1 class="imag"> hi I'm john paul</h1>
+<img src={isha}/>
+</div>
+</>
+);
+}
+export default App;
+in App.js we can import
+import Home from './component/home/home'
+<Home/>resusable
+<Home/>
+
+react examples named we can use desturctor {}
+
+import {Home} from './component/home/home'
+return (
+<>
+exports types
+*default
+*named
+
+image adding
+
+
+
+install bootstrap 
+
+html runs as a DOM method
+react runs as a virtual DOM method
+
+Virtual-DOM:react is speed
+	it takes a copy of the realDOM and render the updated element.
+
+10/01/23
+React Routing:
+Packages:React-router-dom its means package or project
+Types:
+<browser Router>--component
+<Router>
+<Route>--
+<link>--<link to=" "/>
+
+Syntax:
+<BrowserRouter>
+<Router>
+<Route/>
+<Route/>
+</Router>
+</BrowserRouter>
+Routes examples
+import {BrowserRouter,Routes,Route} from 'react-router-dom'
+function 
+
+
+

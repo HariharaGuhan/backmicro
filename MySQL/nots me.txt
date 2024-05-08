@@ -1,0 +1,2 @@
+string sequnce of characters
+js is losly or weakly typed language

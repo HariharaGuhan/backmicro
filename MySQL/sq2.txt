@@ -1,0 +1,94 @@
+1.
+
+Mysql> select * from product1 where cateory like 'watch' and price<1000;
++------------+---------+-----------+-------+--------+
+| name       | cateory | price     | brand | rating |
++------------+---------+-----------+-------+--------+
+| wristwatch | watch   | 900.00000 | titan |    4.8 |
++------------+---------+-----------+-------+--------+
+1 row in set (0.00 sec)
+
+2.
+
+
+mysql> select * from product1 where brand like 'titan' and rating>4;
++------------+---------+------------+-------+--------+
+| name       | cateory | price      | brand | rating |
++------------+---------+------------+-------+--------+
+| wristwatch | watch   |  900.00000 | titan |    4.8 |
+| applewatch | watch   | 1400.00000 | titan |    4.2 |
++------------+---------+------------+-------+--------+
+2 rows in set (0.00 sec)
+
+3.product under 1000 and rating 4 
+
+
+mysql> select * from product1 where rating>4 and price<=1000;
++------------+---------+------------+-------+--------+
+| name       | cateory | price      | brand | rating |
++------------+---------+------------+-------+--------+
+| wristwatch | watch   |  900.00000 | titan |    4.8 |
+| whitepurse | purse   | 1000.00000 | mrf   |    5.0 |
++------------+---------+------------+-------+--------+
+2 rows in set (0.00 sec)
+
+4.Rating is above 3.5,price less the 1000,get all the titan brand.
+ 
+mysql> select * from product1 where brand like 'titan' and price<1000;
++------------+---------+-----------+-------+--------+
+| name       | cateory | price     | brand | rating |
++------------+---------+-----------+-------+--------+
+| wristwatch | watch   | 900.00000 | titan |    4.8 |
++------------+---------+-----------+-------+--------+
+1 row in set (0.00 sec)
+
+5.get all product
+mysql> select * from product1 where brand in ('titan','mrf','nick');
++------------+----------+------------+-------+--------+
+| name       | cateory  | price      | brand | rating |
++------------+----------+------------+-------+--------+
+| wristwatch | watch    |  900.00000 | titan |    4.8 |
+| whitepurse | purse    | 1000.00000 | mrf   |    5.0 |
+| tshirt     | clothing | 1400.00000 | nick  |    4.2 |
+| applewatch | watch    | 1400.00000 | titan |    4.2 |
++------------+----------+------------+-------+--------+
+4 rows in set (0.02 sec)
+
+6.redmi
+
+mysql> select * from product1 where brand like 'redmi'and rating>4;
++------------+---------+-------------+-------+--------+
+| name       | cateory | price       | brand | rating |
++------------+---------+-------------+-------+--------+
+| redmi9     | mobile  | 10500.00000 | redmi |    4.8 |
+| redminote9 | mobile  | 19500.00000 | redmi |    5.0 |
++------------+---------+-------------+-------+--------+
+2 rows in set (0.00 sec)
+
+7.above 4
+mysql> select * from product1 where cateory like 'mobile' and rating>4;
++------------+---------+-------------+--------+--------+
+| name       | cateory | price       | brand  | rating |
++------------+---------+-------------+--------+--------+
+| redmi9     | mobile  | 10500.00000 | redmi  |    4.8 |
+| redminote9 | mobile  | 19500.00000 | redmi  |    5.0 |
+| realme9    | mobile  |  9500.00000 | realme |    4.8 |
+| realme10i  | mobile  |  9500.00000 | realme |    4.9 |
++------------+---------+-------------+--------+--------+
+4 rows in set (0.00 sec)
+
+8.
+
+
+mysql> select * from product1 where (brand= 'nick' and rating>3.5) or(brand= 'titan'  and rating>4);
++------------+----------+------------+-------+--------+
+| name       | cateory  | price      | brand | rating |
++------------+----------+------------+-------+--------+
+| wristwatch | watch    |  900.00000 | titan |    4.8 |
+| tshirt     | clothing | 1400.00000 | nick  |    4.2 |
+| applewatch | watch    | 1400.00000 | titan |    4.2 |
++------------+----------+------------+-------+--------+
+3 rows in set (0.00 sec)
+
+
+

@@ -1,0 +1,223 @@
+11.
+mysql> select *from agree where hiredate>'1988-06-01'and hiredate<'1990-06-01';
++---------+--------+---------+---------------------+-------+------------+--------+------------+----------+
+| empcode | name   | job     | manager             | empid | hiredate   | salary | commission | deptcode |
++---------+--------+---------+---------------------+-------+------------+--------+------------+----------+
+|   10078 | jana   | himbury | salesman            | 20007 | 1989-02-02 |  15000 |        330 |     2018 |
+|   10008 | pravin | jarvis  | data entry operator | 20002 | 1988-11-02 |  33000 |        220 |     2012 |
+|   10078 | jana   | himbury | salesman            | 20007 | 1989-02-02 |  15000 |        330 |     2018 |
+|   10008 | pravin | jarvis  | data entry operator | 20002 | 1988-11-02 |  33000 |        220 |     2012 |
++---------+--------+---------+---------------------+-------+------------+--------+------------+----------+
+4 rows in set (0.09 sec)
+
+12.
+
+
+mysql> select name from agree;
++-----------+
+| name      |
++-----------+
+| imspravin |
+| jana      |
+| rishi     |
+| pravin    |
+| arun      |
+| imspravin |
+| jana      |
+| rishi     |
+| pravin    |
+| arun      |
++-----------+
+10 rows in set (0.00 sec)
+
+13.
+
+
+mysql> select *from agree where deptcode>2012 and deptcode<2029;
++---------+-------+---------+---------------+-------+------------+--------+------------+----------+
+| empcode | name  | job     | manager       | empid | hiredate   | salary | commission | deptcode |
++---------+-------+---------+---------------+-------+------------+--------+------------+----------+
+|   10078 | jana  | himbury | salesman      | 20007 | 1989-02-02 |  15000 |        330 |     2018 |
+|   10023 | rishi | swan    | web developer | 20001 | 1999-08-22 |  10000 |         20 |     2014 |
+|   10078 | jana  | himbury | salesman      | 20007 | 1989-02-02 |  15000 |        330 |     2018 |
+|   10023 | rishi | swan    | web developer | 20001 | 1999-08-22 |  10000 |         20 |     2014 |
++---------+-------+---------+---------------+-------+------------+--------+------------+----------+
+4 rows in set (0.00 sec)
+
+14.
+
+ysql> select * from agree where name like 'r%';
++---------+-------+------+---------------+-------+------------+--------+------------+----------+
+| empcode | name  | job  | manager       | empid | hiredate   | salary | commission | deptcode |
++---------+-------+------+---------------+-------+------------+--------+------------+----------+
+|   10023 | rishi | swan | web developer | 20001 | 1999-08-22 |  10000 |         20 |     2014 |
+|   10023 | rishi | swan | web developer | 20001 | 1999-08-22 |  10000 |         20 |     2014 |
++---------+-------+------+---------------+-------+------------+--------+------------+----------+
+2 rows in set (0.00 sec)
+
+15.
+mysql> select * from agree where name like '%n';
++---------+-----------+--------+---------------------+-------+------------+--------+------------+----------+
+| empcode | name      | job    | manager             | empid | hiredate   | salary | commission | deptcode |
++---------+-----------+--------+---------------------+-------+------------+--------+------------+----------+
+|   10028 | imspravin | adolf  | web designer        | 20013 | 1992-12-12 |  55000 |          0 |     2029 |
+|   10008 | pravin    | jarvis | data entry operator | 20002 | 1988-11-02 |  33000 |        220 |     2012 |
+|   10001 | arun      | adolf  | sofware engineer    | 20006 | 1998-12-22 |  20000 |          0 |     2012 |
+|   10028 | imspravin | adolf  | web designer        | 20013 | 1992-12-12 |  55000 |          0 |     2029 |
+|   10008 | pravin    | jarvis | data entry operator | 20002 | 1988-11-02 |  33000 |        220 |     2012 |
+|   10001 | arun      | adolf  | sofware engineer    | 20006 | 1998-12-22 |  20000 |          0 |     2012 |
++---------+-----------+--------+---------------------+-------+------------+--------+------------+----------+
+6 rows in set (0.00 sec)
+
+16.
+
+mysql> select * from agree where name like '_a%';
++---------+------+---------+----------+-------+------------+--------+------------+----------+
+| empcode | name | job     | manager  | empid | hiredate   | salary | commission | deptcode |
++---------+------+---------+----------+-------+------------+--------+------------+----------+
+|   10078 | jana | himbury | salesman | 20007 | 1989-02-02 |  15000 |        330 |     2018 |
+|   10078 | jana | himbury | salesman | 20007 | 1989-02-02 |  15000 |        330 |     2018 |
++---------+------+---------+----------+-------+------------+--------+------------+----------+
+2 rows in set (0.00 sec)
+
+17.
+ysql> select name from agree;
++-----------+
+| name      |
++-----------+
+| imspravin |
+| jana      |
+| rishi     |
+| pravin    |
+| arun      |
+| imspravin |
+| jana      |
+| rishi     |
+| pravin    |
+| arun      |
++-----------+
+10 rows in set (0.00 sec)
+
+18.
+
+
+mysql> select  distinct job from agree;
++---------+
+| job     |
++---------+
+| adolf   |
+| himbury |
+| swan    |
+| jarvis  |
++---------+
+4 rows in set (0.02 sec)
+19.
+mysql> select * from agree where manager  like 'salesman'  or  ' data entry operator' or ' software engineer' ;
++---------+------+---------+----------+-------+------------+--------+------------+----------+
+| empcode | name | job     | manager  | empid | hiredate   | salary | commission | deptcode |
++---------+------+---------+----------+-------+------------+--------+------------+----------+
+|   10078 | jana | himbury | salesman | 20007 | 1989-02-02 |  15000 |        330 |     2018 |
+|   10078 | jana | himbury | salesman | 20007 | 1989-02-02 |  15000 |        330 |     2018 |
++---------+------+---------+----------+-------+------------+--------+------------+----------+
+2 rows in set, 2 warnings (0.00 sec)
+
+20.
+ysql> select salary from agree order by salary asc;
++--------+
+| salary |
++--------+
+|  10000 |
+|  10000 |
+|  15000 |
+|  15000 |
+|  20000 |
+|  20000 |
+|  33000 |
+|  33000 |
+|  55000 |
+|  55000 |
++--------+
+
+21.
+mysql> select name,manager,salary,(1.5*salary) as newsalary from agree;
++-----------+---------------------+--------+-----------+
+| name      | manager             | salary | newsalary |
++-----------+---------------------+--------+-----------+
+| imspravin | web designer        |  55000 |   82500.0 |
+| jana      | salesman            |  15000 |   22500.0 |
+| rishi     | web developer       |  10000 |   15000.0 |
+| pravin    | data entry operator |  33000 |   49500.0 |
+| arun      | sofware engineer    |  20000 |   30000.0 |
+| imspravin | web designer        |  55000 |   82500.0 |
+| jana      | salesman            |  15000 |   22500.0 |
+| rishi     | web developer       |  10000 |   15000.0 |
+| pravin    | data entry operator |  33000 |   49500.0 |
+| arun      | sofware engineer    |  20000 |   30000.0 |
++-----------+---------------------+--------+-----------+
+10 rows in set (0.02 sec)
+
+22.
+mysql> select * from agree where name like '__11%';
+Empty set (0.00 sec)
+
+23.mysql> select * from agree where name like '___n%';
++---------+------+-------+------------------+-------+------------+--------+------------+----------+
+| empcode | name | job   | manager          | empid | hiredate   | salary | commission | deptcode |
++---------+------+-------+------------------+-------+------------+--------+------------+----------+
+|   10001 | arun | adolf | sofware engineer | 20006 | 1998-12-22 |  20000 |          0 |     2012 |
+|   10001 | arun | adolf | sofware engineer | 20006 | 1998-12-22 |  20000 |          0 |     2012 |
++---------+------+-------+------------------+-------+------------+--------+------------+----------+
+2 rows in set (0.00 sec)
+24.mysql>  select name,manager,salary  from agree where  salary not between 10000 and 15000;
++-----------+---------------------+--------+
+| name      | manager             | salary |
++-----------+---------------------+--------+
+| imspravin | web designer        |  55000 |
+| pravin    | data entry operator |  33000 |
+| arun      | sofware engineer    |  20000 |
+| imspravin | web designer        |  55000 |
+| pravin    | data entry operator |  33000 |
+| arun      | sofware engineer    |  20000 |
++-----------+---------------------+--------+
+6 rows in set (0.01 sec)
+26.
+
+mysql> select name,hiredate from agree where hiredate like '1988%';
++--------+------------+
+| name   | hiredate   |
++--------+------------+
+| pravin | 1988-11-02 |
+| pravin | 1988-11-02 |
++--------+------------+
+2 rows in set (0.00 sec)
+
+27.
+mysql> select name,hiredate from agree where hiredate between '1988-01-01' and '1998-05-30';
++-----------+------------+
+| name      | hiredate   |
++-----------+------------+
+| imspravin | 1992-12-12 |
+| jana      | 1989-02-02 |
+| pravin    | 1988-11-02 |
+| imspravin | 1992-12-12 |
+| jana      | 1989-02-02 |
+| pravin    | 1988-11-02 |
++-----------+------------+
+6 rows in set (0.00 sec)
+
+29.
+mysql> select name,salary,(3*salary) as newsalary from agree where name='rishi';
++-------+--------+-----------+
+| name  | salary | newsalary |
++-------+--------+-----------+
+| rishi |  10000 |     30000 |
+
+30.
+mysql> select name,hiredate from agree where hiredate like '%11%';
++--------+------------+
+| name   | hiredate   |
++--------+------------+
+| pravin | 1988-11-02 |
+| pravin | 1988-11-02 |
++--------+------------+
+2 rows in set (0.00 sec)

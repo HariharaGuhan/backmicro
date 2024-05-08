@@ -1,0 +1,88 @@
+ function grade(side1,side2,side3){
+        var grade=" ";
+        if( (side1==side2 ==side3)){
+            grade="Equilateral triangle";
+        }
+        else if(side1==side2 && side2==side3){
+            grade="Isosceles triangle";
+
+        }
+        else{
+            grade="Scalene triangle";
+        }
+        return grade;
+            
+    }
+    let m=grade(1,2,3);
+    console.log(m);
+
+
+f=3
+
+ function grade(n1){
+        var grade=" ";
+        if( (n1<=30 && n1>=11)){
+            grade="between Range";
+        }
+        else if(n1<=34 && n1<=51){
+            grade="outside Range";
+
+        }
+        else{
+            grade="null";
+        }
+        return grade;
+            
+    }
+    let m=grade(12,20);
+    console.log(m);
+
+
+ function evalnumber(n1, n2) {
+            if ((n1 < 0) || (n2 < 0)) {
+                a = n1 + n2;
+                b = n1 - n2;
+                c = n1 * n2;
+                d = n1 / n2;
+                e = n1 % n2;
+                console.log(a);
+                console.log(b);
+                console.log(c);
+                console.log(d);
+                console.log(e);
+            }else{
+                console.log("Invalid operation");
+            }
+        }
+        evalnumber(26,25);
+
+
+
+
+function findgrade(a) {
+            if (a > 90 && a<=100) {
+                console.log(" S Grade");
+                
+            } else if (a>80 && a<=90) {
+                console.log("A grade");
+            } else if(a>70 && a<=80) {
+                console.log(" B grade");
+            }
+            else if (a>60 && a<=70) {
+                console.log("C grade");
+            } else if(a>50 && a<=60) {
+                console.log(" D grade");
+            }
+            else if (a>40 && a<=50) {
+                console.log("E grade");
+            } else if(a>0 && a<=40) {
+                console.log("student has failed");
+            }
+            else{
+                console.log("invalid marks");
+            }
+        }
+        findgrade(68);
+
+
+

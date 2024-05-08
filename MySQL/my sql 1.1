@@ -1,0 +1,131 @@
+//1.create a student table to store name,age and score of the student.//
+
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| batch10            |
+| hari               |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| stud_dot           |
+| student            |
+| student_details    |
+| sys                |
+| world              |
++--------------------+
+11 rows in set (0.01 sec)
+
+mysql> create database hari_det;
+Query OK, 1 row affected (0.06 sec)
+
+mysql> use hari;
+Database changed
+mysql> use hari_det;
+Database changed
+mysql> create table student(name char(20),agr int,score int);
+Query OK, 0 rows affected (0.26 sec)
+
+mysql> desc student;
++-------+----------+------+-----+---------+-------+
+| Field | Type     | Null | Key | Default | Extra |
++-------+----------+------+-----+---------+-------+
+| name  | char(20) | YES  |     | NULL    |       |
+| agr   | int      | YES  |     | NULL    |       |
+| score | int      | YES  |     | NULL    |       |
++-------+----------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+//2.in a typical e-commerce application, we need to store the following details.create a customer table to store the data.//
+
+mysql> create table customer(customer_id int,firstname char(20),lastname char(20),Date_of_birth date,adress text,phone_number int);
+Query OK, 0 rows affected (0.69 sec)
+
+mysql> desc customer;
++---------------+----------+------+-----+---------+-------+
+| Field         | Type     | Null | Key | Default | Extra |
++---------------+----------+------+-----+---------+-------+
+| customer_id   | int      | YES  |     | NULL    |       |
+| firstname     | char(20) | YES  |     | NULL    |       |
+| lastname      | char(20) | YES  |     | NULL    |       |
+| Date_of_birth | date     | YES  |     | NULL    |       |
+| adress        | text     | YES  |     | NULL    |       |
+| phone_number  | int      | YES  |     | NULL    |       |
++---------------+----------+------+-----+---------+-------+
+6 rows in set (0.01 sec)
+//3.we need to store the details of orders in an e-commerce application.create an order details table to store the following details for every order.//
+
+
+mysql> create table order_details(order_id int,customer_id int,order_datetime datetime,shipping_datetime datetime,total_amount float);
+Query OK, 0 rows affected (0.17 sec)
+
+mysql> desc order_details;
++-------------------+----------+------+-----+---------+-------+
+| Field             | Type     | Null | Key | Default | Extra |
++-------------------+----------+------+-----+---------+-------+
+| order_id          | int      | YES  |     | NULL    |       |
+| customer_id       | int      | YES  |     | NULL    |       |
+| order_datetime    | datetime | YES  |     | NULL    |       |
+| shipping_datetime | datetime | YES  |     | NULL    |       |
+| total_amount      | float    | YES  |     | NULL    |       |
++-------------------+----------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+//4.we're storing the details of players who are..,//
+5 rows in set (0.01 sec)
+
+mysql> create table player(name char(25),age int, score int);
+Query OK, 0 rows affected (0.12 sec)
+
+mysql> insert into player(name,age,score)value('hari',23,70);
+Query OK, 1 row affected (0.12 sec)
+
+mysql> select*from player;
++------+------+-------+
+| name | age  | score |
++------+------+-------+
+| hari |   23 |    70 |
++------+------+-------+
+1 row in set (0.00 sec)
+
+//5.the database contains...,//
+
+
+mysql> insert into player(name,age,score)values('hariguhan',22,67),('arun',23,200);
+Query OK, 2 rows affected (0.07 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> desc player;
++-------+----------+------+-----+---------+-------+
+| Field | Type     | Null | Key | Default | Extra |
++-------+----------+------+-----+---------+-------+
+| name  | char(25) | YES  |     | NULL    |       |
+| age   | int      | YES  |     | NULL    |       |
+| score | int      | YES  |     | NULL    |       |
++-------+----------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+
+mysql> select * from player;
++-----------+------+-------+
+| name      | age  | score |
++-----------+------+-------+
+| hari      |   23 |    70 |
+| hariguhan |   22 |    67 |
+| arun      |   23 |   200 |
++-----------+------+-------+
+3 rows in set (0.00 sec)
+
+//6.get details from 'hari'..//
+
+
+mysql> select * from player where name='hari';
++------+------+-------+
+| name | age  | score |
++------+------+-------+
+| hari |   23 |    70 |
++------+------+-------+
+1 row in set (0.00 sec)

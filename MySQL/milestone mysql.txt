@@ -1,0 +1,207 @@
+Q1 . Create a table with suitable constraints and fill the table with following dataset.
+
+mysql> insert into salary1(name,gender,dob,dateofaddmission,dep,salary)values('hari','m','1999-07-08','2022-08-08','history',40000),('madhan','m','1998-07-08','2022-09-08','science',50000),('hariguhan','m','2000-10-01','2022-08-18','datascience',20000),('mano','m','2001-12-12','2022-12-01','biology',25000),('haripriya','f','2002-12-08','2022-12-08','maths',55000),('deepika','f','2001-07-02','2021-11-10','chemistry',65000);
+Query OK, 6 rows affected (0.10 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+mysql> select*from salary1;
++-----------+--------+------------+------------------+-----------------+-----------+
+| name      | gender | dob        | dateofaddmission | dep             | salary    |
++-----------+--------+------------+------------------+-----------------+-----------+
+| deepan    | m      | 1989-10-28 | 2021-11-22       | english         | 25000.000 |
+| hari      | m      | 1999-07-08 | 2022-08-08       | computerscience | 40000.000 |
+| madhan    | m      | 1998-07-08 | 2022-09-08       | science         | 50000.000 |
+| hari      | m      | 2000-10-01 | 2022-08-18       | datascience     | 20000.000 |
+| mano      | m      | 2001-12-12 | 2022-12-01       | biology         | 25000.000 |
+| haripriya | f      | 2002-12-08 | 2022-12-08       | maths           | 55000.000 |
+| hari      | m      | 2001-07-02 | 2021-11-10       | chemistry       | 65000.000 |
+| hari      | m      | 1999-07-08 | 2022-08-08       | history         | 40000.000 |
+| madhan    | m      | 1998-07-08 | 2022-09-08       | science         | 50000.000 |
+| hariguhan | m      | 2000-10-01 | 2022-08-18       | datascience     | 20000.000 |
+| mano      | m      | 2001-12-12 | 2022-12-01       | biology         | 25000.000 |
+| haripriya | f      | 2002-12-08 | 2022-12-08       | maths           | 55000.000 |
+| deepika   | f      | 2001-07-02 | 2021-11-10       | chemistry       | 65000.000 |
++-----------+--------+------------+------------------+-----------------+-----------+
+13 rows in set (0.00 sec)
+
+Q2. Write an SQL Query to select all the information of teachers in computer department.
+
+
+mysql> SELECT name FROM salary1 WHERE dep= "computerscience" AND gender="f" or gender="m";
++-----------+
+| name      |
++-----------+
+| deepan    |
+| hari      |
+| madhan    |
+| hari      |
+| mano      |
+| hari      |
+| hari      |
+| madhan    |
+| hariguhan |
+| mano      |
++-----------+
+
+Q3. Write a query to list the name of female teachers in History department.
+
+
+mysql> select*from salary1;
++-----------+--------+------------+------------------+-----------------+-----------+
+| name      | gender | dob        | dateofaddmission | dep             | salary    |
++-----------+--------+------------+------------------+-----------------+-----------+
+| deepan    | m      | 1989-10-28 | 2021-11-22       | english         | 25000.000 |
+| hari      | m      | 1999-07-08 | 2022-08-08       | computerscience | 40000.000 |
+| madhan    | m      | 1998-07-08 | 2022-09-08       | science         | 50000.000 |
+| hari      | m      | 2000-10-01 | 2022-08-18       | datascience     | 20000.000 |
+| mano      | m      | 2001-12-12 | 2022-12-01       | biology         | 25000.000 |
+| haripriya | f      | 2002-12-08 | 2022-12-08       | maths           | 55000.000 |
+| hari      | m      | 2001-07-02 | 2021-11-10       | chemistry       | 65000.000 |
+| hari      | m      | 1999-07-08 | 2022-08-08       | history         | 40000.000 |
+| madhan    | m      | 1998-07-08 | 2022-09-08       | science         | 50000.000 |
+| hariguhan | m      | 2000-10-01 | 2022-08-18       | datascience     | 20000.000 |
+| mano      | m      | 2001-12-12 | 2022-12-01       | biology         | 25000.000 |
+| haripriya | f      | 2002-12-08 | 2022-12-08       | maths           | 55000.000 |
+| deepika   | f      | 2001-07-02 | 2021-11-10       | chemistry       | 65000.000 |
+| prema     | f      | 1985-10-12 | 2020-11-22       | history         | 40000.000 |
+| gayathri  | f      | 1997-03-25 | 2021-11-22       | history         | 50000.000 |
++-----------+--------+------------+------------------+-----------------+-----------+
+15 rows in set (0.00 sec)
+
+mysql>  SELECT name FROM salary1 WHERE dep= "history" AND gender="f";
++----------+
+| name     |
++----------+
+| prema    |
+| gayathri |
++----------+
+2 rows in set (0.00 sec)
+
+Q4. list all names of teachers with date of admission in ascending order
+
+mysql> select name,dateofaddmission as dateofjoining from salary1 name order by dateofaddmission asc;
++-----------+---------------+
+| name      | dateofjoining |
++-----------+---------------+
+| prema     | 2020-11-22    |
+| hari      | 2021-11-10    |
+| deepika   | 2021-11-10    |
+| deepan    | 2021-11-22    |
+| gayathri  | 2021-11-22    |
+| hari      | 2022-08-08    |
+| hari      | 2022-08-08    |
+| hari      | 2022-08-18    |
+| hariguhan | 2022-08-18    |
+| madhan    | 2022-09-08    |
+| madhan    | 2022-09-08    |
+| mano      | 2022-12-01    |
+| mano      | 2022-12-01    |
+| haripriya | 2022-12-08    |
+| haripriya | 2022-12-08    |
++-----------+---------------+
+15 rows in set (0.01 sec)
+
+Q5. display Teacher’s name, Department, and Salary of male teacher.
+
+
+mysql>  Select name,dep,salary,gender from salary1 where gender="m";
++-----------+-----------------+-----------+--------+
+| name      | dep             | salary    | gender |
++-----------+-----------------+-----------+--------+
+| deepan    | english         | 25000.000 | m      |
+| hari      | computerscience | 40000.000 | m      |
+| madhan    | science         | 50000.000 | m      |
+| hari      | datascience     | 20000.000 | m      |
+| mano      | biology         | 25000.000 | m      |
+| hari      | chemistry       | 65000.000 | m      |
+| hari      | history         | 40000.000 | m      |
+| madhan    | science         | 50000.000 | m      |
+| hariguhan | datascience     | 20000.000 | m      |
+| mano      | biology         | 25000.000 | m      |
++-----------+-----------------+-----------+--------+
+10 rows in set (0.00 sec)
+
+Q6. To count the number of items whose salary is less than 10,000
+
+
+mysql> Select * from salary1 where salary<10000;
++-------+--------+------------+------------------+---------------+----------+
+| name  | gender | dob        | dateofaddmission | dep           | salary   |
++-------+--------+------------+------------------+---------------+----------+
+| aruna | f      | 1985-10-12 | 2020-11-22       | history       | 9500.000 |
+| gaya  | f      | 1997-03-25 | 2021-11-22       | socialscience | 8000.000 |
+| aruna | f      | 1985-10-12 | 2020-11-22       | maths         | 5000.000 |
+| priya | f      | 1997-03-25 | 2021-11-22       | history       | 9000.000 |
++-------+--------+------------+------------------+---------------+----------+
+4 rows in set (0.00 sec)
+
+Q7.  To insert a new record in the Teacher table with the following data: 8,”Mersha”,”computer”,{1/1/2000},12000,”m”
+
+
+
+mysql> insert into salary1 values('mersha','m','2000-01-01','2021-11-22','computer',12000);
+Query OK, 1 row affected (0.05 sec)
+
+mysql> Select * from salary1;
++-----------+--------+------------+------------------+-----------------+-----------+
+| name      | gender | dob        | dateofaddmission | dep             | salary    |
++-----------+--------+------------+------------------+-----------------+-----------+
+| deepan    | m      | 1989-10-28 | 2021-11-22       | english         | 25000.000 |
+| hari      | m      | 1999-07-08 | 2022-08-08       | computerscience | 40000.000 |
+| madhan    | m      | 1998-07-08 | 2022-09-08       | science         | 50000.000 |
+| hari      | m      | 2000-10-01 | 2022-08-18       | datascience     | 20000.000 |
+| mano      | m      | 2001-12-12 | 2022-12-01       | biology         | 25000.000 |
+| haripriya | f      | 2002-12-08 | 2022-12-08       | maths           | 55000.000 |
+| hari      | m      | 2001-07-02 | 2021-11-10       | chemistry       | 65000.000 |
+| hari      | m      | 1999-07-08 | 2022-08-08       | history         | 40000.000 |
+| madhan    | m      | 1998-07-08 | 2022-09-08       | science         | 50000.000 |
+| hariguhan | m      | 2000-10-01 | 2022-08-18       | datascience     | 20000.000 |
+| mano      | m      | 2001-12-12 | 2022-12-01       | biology         | 25000.000 |
+| haripriya | f      | 2002-12-08 | 2022-12-08       | maths           | 55000.000 |
+| deepika   | f      | 2001-07-02 | 2021-11-10       | chemistry       | 65000.000 |
+| prema     | f      | 1985-10-12 | 2020-11-22       | history         | 40000.000 |
+| gayathri  | f      | 1997-03-25 | 2021-11-22       | history         | 50000.000 |
+| aruna     | f      | 1985-10-12 | 2020-11-22       | history         |  9500.000 |
+| gaya      | f      | 1997-03-25 | 2021-11-22       | socialscience   |  8000.000 |
+| aruna     | f      | 1985-10-12 | 2020-11-22       | maths           |  5000.000 |
+| priya     | f      | 1997-03-25 | 2021-11-22       | history         |  9000.000 |
+| mersha    | m      | 2000-01-01 | 2021-11-22       | computer        | 12000.000 |
+| mersha    | m      | 2000-01-01 | 2021-11-22       | computer        | 12000.000 |
++-----------+--------+------------+------------------+-----------------+-----------+
+
+Q8. List the teacher detail who is getting the minimum salary.
+
+mysql> SELECT MIN(salary)FROM salary1;
++-------------+
+| MIN(salary) |
++-------------+
+|    5000.000 |
++-------------+
+1 row in set (0.04 sec)
+
+
+
+Q9.  List the teacher detail who is getting the second minimum salary.
+
+
+mysql> select*from salary1 where salary=(select min(salary)from salary1);
++----+-------+--------+------------+------------------+-------+----------+
+| id | name  | gender | dob        | dateofaddmission | dep   | salary   |
++----+-------+--------+------------+------------------+-------+----------+
+| 18 | aruna | f      | 1985-10-12 | 2020-11-22       | maths | 5000.000 |
++----+-------+--------+------------+------------------+-------+----------+
+1 row in set (0.03 sec)
+
+Q10. List down the average salary of the teachers belongs to History department.
+
+mysql> select avg(salary)from salary1 where dep like 'history';
++---------------+
+| avg(salary)   |
++---------------+
+| 29700.0000000 |
++---------------+  
+
+
+
+
+

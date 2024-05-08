@@ -1,0 +1,107 @@
+
+mysql> use hari;
+Database changed
+mysql> desc pro;
++---------+--------------+------+-----+---------+-------+
+| Field   | Type         | Null | Key | Default | Extra |
++---------+--------------+------+-----+---------+-------+
+| name    | char(25)     | YES  |     | NULL    |       |
+| cateory | char(25)     | YES  |     | NULL    |       |
+| price   | double(10,5) | YES  |     | NULL    |       |
+| brand   | char(25)     | YES  |     | NULL    |       |
+| rating  | double(5,1)  | YES  |     | NULL    |       |
++---------+--------------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> select*from pro;
++------------+-------------------+------------+---------+--------+
+| name       | cateory           | price      | brand   | rating |
++------------+-------------------+------------+---------+--------+
+| blackshirt | clothing          |  900.00000 | puma    |    4.8 |
+| whiteshirt | clothing          | 1000.00000 | uspolo  |    5.0 |
+| redshirt   | clothing          | 1900.00000 | jibotti |    4.5 |
+| waterwatch | watch             |  900.00000 | puma    |    4.8 |
+| whiteshirt | traditional shirt | 1000.00000 | uspolo  |    5.0 |
++------------+-------------------+------------+---------+--------+
+1.Get all the details of products from ths name "puma" brand.
+
+
+mysql> select *from pro where brand like 'puma';
++------------+----------+-----------+-------+--------+
+| name       | cateory  | price     | brand | rating |
++------------+----------+-----------+-------+--------+
+| blackshirt | clothing | 900.00000 | puma  |    4.8 |
+| waterwatch | watch    | 900.00000 | puma  |    4.8 |
++------------+----------+-----------+-------+--------+
+2 rows in set (0.00 sec)
+
+2.
+
+mysql> select * from pro where cateory like 'clo%';
++------------+----------+------------+---------+--------+
+| name       | cateory  | price      | brand   | rating |
++------------+----------+------------+---------+--------+
+| blackshirt | clothing |  900.00000 | puma    |    4.8 |
+| whiteshirt | clothing | 1000.00000 | uspolo  |    5.0 |
+| redshirt   | clothing | 1900.00000 | jibotti |    4.5 |
++------------+----------+------------+---------+--------+
+3 rows in set (0.00 sec)	
+
+3.
+
+mysql>  select * from pro where brand  like 'uspolo';
++------------+-------------------+------------+--------+--------+
+| name       | cateory           | price      | brand  | rating |
++------------+-------------------+------------+--------+--------+
+| whiteshirt | clothing          | 1000.00000 | uspolo |    5.0 |
+| whiteshirt | traditional shirt | 1000.00000 | uspolo |    5.0 |
++------------+-------------------+------------+--------+--------+
+2 rows in set (0.00 sec)
+4.
+ select * from pro where cateory like 'clothing';
++------------+----------+------------+---------+--------+
+| name       | cateory  | price      | brand   | rating |
++------------+----------+------------+---------+--------+
+| blackshirt | clothing |  900.00000 | puma    |    4.8 |
+| whiteshirt | clothing | 1000.00000 | uspolo  |    5.0 |
+| redshirt   | clothing | 1900.00000 | jibotti |    4.5 |
++------------+----------+------------+---------+--------+
+3 rows in set (0.00 sec)
+5.
+
+mysql> select * from pro where name  like '%shirt';
++------------+-------------------+------------+---------+--------+
+| name       | cateory           | price      | brand   | rating |
++------------+-------------------+------------+---------+--------+
+| blackshirt | clothing          |  900.00000 | puma    |    4.8 |
+| whiteshirt | clothing          | 1000.00000 | uspolo  |    5.0 |
+| redshirt   | clothing          | 1900.00000 | jibotti |    4.5 |
+| whiteshirt | traditional shirt | 1000.00000 | uspolo  |    5.0 |
++------------+-------------------+------------+---------+--------+
+4 rows in set (0.00 sec)
+
+6.
+
+mysql> select * from pro where price<1000;
++------------+----------+-----------+-------+--------+
+| name       | cateory  | price     | brand | rating |
++------------+----------+-----------+-------+--------+
+| blackshirt | clothing | 900.00000 | puma  |    4.8 |
+| waterwatch | watch    | 900.00000 | puma  |    4.8 |
++------------+----------+-----------+-------+--------+
+2 rows in set (0.04 sec)
+
+7.
+
+mysql> select * from pro where rating >=4.1;
++------------+-------------------+------------+---------+--------+
+| name       | cateory           | price      | brand   | rating |
++------------+-------------------+------------+---------+--------+
+| blackshirt | clothing          |  900.00000 | puma    |    4.8 |
+| whiteshirt | clothing          | 1000.00000 | uspolo  |    5.0 |
+| redshirt   | clothing          | 1900.00000 | jibotti |    4.5 |
+| waterwatch | watch             |  900.00000 | puma    |    4.8 |
+| whiteshirt | traditional shirt | 1000.00000 | uspolo  |    5.0 |
++------------+-------------------+------------+---------+--------+
+5 rows in set (0.02 sec)
+

@@ -1,0 +1,52 @@
+ <>
+            <div className="container-fluid bg-light">
+                <h1 className="text-succes text-center font-italic p-5">Education Details</h1>
+                <div className="container-fluid">
+                    <div className="row">
+                        <div className="col-lg-4">
+                            <img src={img1} className="" width="150%" />
+                        </div>
+                        <div className="col-lg-2">&nbsp;</div>
+                        <div className="col-lg-6 text-light">
+                        <div className="box bg-primary text-center">
+                                {vieweducation.map((v, i) => (
+                                    <>
+                                        <h5 className="text-warning">Post Graduate</h5>
+                                        <h3 className="">Institute : </h3><h3 className="text-light">{v.pgins}</h3>
+                                        <h3 className="">Department:</h3><h3 className="text-light">{v.pggrade}</h3>
+                                    </>
+                                ))}
+                            </div>
+                            <div className="box bg-primary text-center">
+                                {vieweducation.map((v, i) => (
+                                    <>
+                                        <h5 className="text-warning">Under Graduate</h5>
+                                        <h3 className="">Institute : </h3><h3 className="text-light">{v.ugins}</h3>
+                                        <h3 className="">Department:</h3><h3 className="text-light">{v.uggrade}</h3>
+                                    </>
+                                ))}
+                            </div>
+                            <div className="mt-5 border bg-info text-center">
+                                {
+                                    vieweducation.map((v, i) => (
+                                        <>
+                                            <h5 className="text-warning">Higher Secondary</h5>
+                                            <h3 className="">School Name: </h3><h3 className="text-light">{v.hscins}</h3>
+                                            <h3 className="">Department:</h3><h3 className="text-light">{v.hscgrade}</h3>
+                                        </>
+                                    ))}
+                            </div>
+                            <div className="mt-5 border bg-info text-center">
+                                {vieweducation.map((v, i) => (
+                                    <>
+                                        <h5 className="text-warning">Secondary School Leaving Certificate</h5>
+                                        <h3 className="">School Name: </h3><h3 className="text-light">{v.sslcins}</h3>
+                                        <h3 className="">Department:</h3><h3 className="text-light">{v.sslcgrade}</h3>
+                                    </>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </>

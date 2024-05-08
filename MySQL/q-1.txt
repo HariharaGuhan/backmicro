@@ -1,0 +1,23 @@
+1.
+
+ERROR 1050 (42S01): Table 'dresscode' already exists
+mysql> create table dresscode1 (name char(20),category char(40),price float,brand char(20),rating float);
+Query OK, 0 rows affected (0.13 sec)
+
+mysql> insert into dresscode1(name,category,price,brand,rating)values('t-shirt','clothing',450,'jocky',4.8),('shorts','clothing',450,'puma',4.8),('brandedshirt','clothing',750,'otto',4.8),('pant','clothing',650,'mensworld',4.8);
+Query OK, 4 rows affected (0.05 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> select*from dresscode1;
++--------------+----------+-------+-----------+--------+
+| name         | category | price | brand     | rating |
++--------------+----------+-------+-----------+--------+
+| t-shirt      | clothing |   450 | jocky     |    4.8 |
+| shorts       | clothing |   450 | puma      |    4.8 |
+| brandedshirt | clothing |   750 | otto      |    4.8 |
+| pant         | clothing |   650 | mensworld |    4.8 |
++--------------+----------+-------+-----------+--------+
+4 rows in set (0.00 sec)
+
+2.
+

@@ -1,0 +1,41 @@
+1.Inline function
+Inline elements are those which only occupy the space bounded by the tags defining the element, 
+instead of breaking the flow of the content.
+Every HTML element has a default display value, depending on what type of element it is.
+There are two display values:
+
+ block and inline.
+
+2.class and structure
+The structure is a user-defined data type that combines logically related data items of different data types, whereas a CLASS is a blueprint or a set of instructions to build specific types of objects.
+ The structure is a value type data type, whereas class is a reference type data type
+
+3.Pass by reference and value
+Is there pass-by-reference in Java?
+Java always passes arguments by value, NOT by reference.
+Java always passes parameter variables by value. Object variables in Java always point to the real object in the memory heap. A mutable object's value can be changed when it is passed to a method.
+
+4.Reference type and value type
+	A Value Type holds the data within its own memory allocation and a Reference Type contains a pointer to another memory location that holds the real data.
+
+
+5.What is overloading and overriding?
+Overloading occurs when two or more methods in one class have the same method name but different parameters. Overriding occurs when two methods have the same method name and parameters
+
+6.Oops
+OOPs (Object-Oriented Programming System) ... Object means a real-world entity such as a pen, chair, table, computer, watch, etc.
+
+What are the 4 basics of OOP?
+Image result for Oops
+The main ideas behind Java's Object-Oriented Programming, OOP concepts include abstraction, encapsulation, inheritance and polymorphism.
+...
+Java defines OOP concepts as follows:
+Abstraction. Using simple things to represent complexity. ...
+Encapsulation. ...
+Inheritance. ...
+Polymorphism.
+
+7.Abstraction 
+Abstraction is the process of hiding the internal details of an application from the outer world. Abstraction is used to describe things in simple terms. It's used to create a boundary between the application and the client programs
+
+

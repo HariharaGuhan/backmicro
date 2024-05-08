@@ -1,0 +1,124 @@
+1.dynamic language
+
+Dynamically-typed languages are those (like JavaScript) where the interpreter assigns variables a type at runtime based on the variable's value at the time.
+What is the difference between class components and functional components React?
+Image result for Difference between functional components and class components in react
+A functional component is just a plain JavaScript function which accepts props as an argument and returns a React element. A class component requires you to extend from React. Component and create a render function which returns a React element.
+
+
+2.state full state less
+
+A stateless system sends a request to the server and relays the response (or the state) back without storing any information. On the other hand, stateful systems expect a response, track information, and resend the request if no response is received
+
+3.useState and use Effect
+
+The useState hook is used for storing variables that are part of your application's state and will change as the user interacts with your website. The useEffect hook allows components to react to lifecycle events such as mounting to the DOM, re-rendering, and unmounting.
+
+4.What is the inheritance in Reactjs?
+Inheritance is a technique in object-oriented programming, it is referred to when one class inherits the class properties to duplicate the behavior while allowing to add the extra features. 
+
+5.What is hooks?
+
+Hooks are functions that let you “hook into” React state and lifecycle features from function components. Hooks don't work inside classes 
+6.what is index.html in react?
+public/index. html is the main HTML file of our app that includes your React code and provides a context for React to render to. If you look at the html file you could see <div id="root"></div> . We call this a “root” DOM node because everything inside it will be managed by React DOM.
+
+7.why java is object oriented language?
+OOP provides a clear structure for the programs. OOP helps to keep the Java code DRY "Don't Repeat Yourself", and makes the code easier to maintain, modify and debug
+
+
+
+My Notes of JavaScript:
+
+1.why do we call javascript is a  dynamically language?
+	Javascript is a dynamic language means data types of the variable can change during runtime.
+
+ 
+2.how does javascript determine datatypes?
+	javascript determines datatypes depending on the value assigned.
+
+3.types of function?
+4.how to check data types in js?
+we can use datatypes by using "typeOf" function.
+5.different data types in js?
+  	1.primitive 
+		string,number,null,boolean,bigint,symbol.
+	2.non-primitive
+		object,array,function
+Data Types-->SNNUBO
+
+6. what is undefined in js?
+	Undefined means the variable has been declared but no value is assigned to it.
+
+7. what is null in js?
+	Null indicates intentional absence of data.Null indicates its not Zero,its not empty its just absence of data.
+
+8.diffrence between null and undefined?
+	Undefined-variable has been created but value is not assigned.
+	Null-we assign value null,it indicates absence of data.
+
+9.Explain hoisting?
+	It's a mechanism where variable and function declaration are move to the top of the scope.
+
+10.Are Javascript intailization hoisted?
+	ans:No
+
+11.Explain globle variable? 
+	Globle Variable are accesible through out the webpage or the document.Anywhere through ,withouut var variable becomes Global.
+
+12.what is UseStrict?
+	"Use Strict" stricly checks if the variable is defined using "var" keyword.
+
+13. How can we handle Global variables?How can avoid global variable?
+Its difficult to avoid global variables.But we can organize it properly by doing two thing:
+	Put global variables in a proper Namespace.
+	Module pattern using closures and IIFE.
+
+14.What is closures? Why do we need Closures?
+	Closures are functions inside function and it makes a normal Stateful.
+
+15.Explain IIFE?
+	Immediately Invoked Function Expression(IIFE)
+ 		It's an anonymous function which gets immediately invoked.
+
+16.What is module pattern and reavaling module pattern?
+	Module pattern or revealing module pattern has 2 big advatages:
+	--self-contained independent components.
+	--Provides Encapsulation and Abstraction.
+
+17.What are the various ways to create Javascript objects?
+	1.Literal{name,value},2.object create()object.create,3.Constructor{},4.ES6 Classes.
+
+18.How can we do inheritance in Javascript?
+	 JavaScript uses object inheritance or pototypical inheritance.Inheritance is done using Prototype object.
+	Every Javascript object has a Prototype Object.It's an inbulid object provided object by JavaScript.
+
+19.what is let Keyword?
+	"let" helps to create immediate block level local scope.it is reassigning is possible
+
+20.Are let variable hoisted?
+	Yes,they are hoisted but not intailized.so,if you try to access the variable you will get an unintailized error.
+
+21.Explain Temporal Dead zone?
+	TDZ it's a period pr it's a state of a variable where variable are named in memory but they are not initialized with any value.
+
+22.let vs var
+	var-->1.scoped to the Immeiate function body.
+	      2.value intialized with undefined.
+	Let-->1.scoped to the immediate enclosing block
+	      2.value intialized with nothing. 
+ 
+	  
+	
+	
+
+	
+
+	 
+
+ 
+  
+  
+
+
+

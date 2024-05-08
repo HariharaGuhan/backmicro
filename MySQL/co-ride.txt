@@ -1,0 +1,20 @@
+Project name:Co-Ride
+
+1.Reg table name:Signup and Siginin
+---------------+--------------+------+-----+---------+----------------+
+| Field         | Type         | Null | Key | Default | Extra          |
++---------------+--------------+------+-----+---------+----------------+
+| id            | bigint       | NO   | PRI | NULL    | auto_increment |
+| firstname     | varchar(300) | YES  |     | NULL    |                |
+| lastname      | varchar(300) | YES  |     | NULL    |                |
+| phone         | varchar(300) | YES  |     | NULL    |                |
+| gender        | varchar(300) | YES  |     | NULL    |                |
+| state         | varchar(300) | YES  |     | NULL    |                |
+| city          | varchar(300) | YES  |     | NULL    |                |
+| address       | varchar(300) | YES  |     | NULL    |                |
++---------------+--------------+------+-----+---------+----------------+
+2.emergency contact.
+2.OTP generation.
+3.Google map.
+4.allow location ___
+5.pickup location and drop location. navigation to get user and driver.
